@@ -5,6 +5,10 @@ name: CI
 # Controls when the workflow will run
 on:
 
+  push:
+    branches:
+      - main
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -28,5 +32,5 @@ jobs:
 
           git add Client.jar.md5
           git add Client.json.md5
-          git commit -m "Github Acions"
+          git commit -m "Get MD5 hash"
           git push
