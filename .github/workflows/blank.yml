@@ -26,6 +26,8 @@ jobs:
           touch Client.json.md5
           md5sum Client.jar > Client.jar.md5
           md5sum Client.json > Client.json.md5
+          sed -i 's/  Client.jar//' Client.jar.md5
+          sed -i 's/  Client.json//' Client.json.md5
       - name: Run it
         run: |
           git config --global user.name "Github Actions"
