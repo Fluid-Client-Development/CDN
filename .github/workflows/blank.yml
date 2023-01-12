@@ -4,11 +4,6 @@ name: CI
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -28,7 +23,7 @@ jobs:
           md5sum Client.jar > Client.jar.md5
           md5sum Client.json > Client.json.md5
       - name: Modifiy the specific files using action
-        uses: action-owner/action-repo@ref
+        uses: Fluid-Client-Development/CDN@ref
       - name: Run it
         run: |
           git config --global user.name "Github Actions"
